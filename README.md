@@ -19,6 +19,7 @@ F:/datasetpic/
 ├── annotate.py          # 主程序：Flask 标注服务器
 ├── local_vlm.py         # 本地 VLM 推理模块（Qwen3.5）
 ├── label_config.json    # 标签分类配置（可自定义）
+├── pose_estimator.py    # 姿态估计模块（Dwpose）
 ├── annotations.json     # 标注数据（运行时生成）
 ├── templates/
 │   └── index.html       # Web 标注界面
@@ -56,7 +57,7 @@ cd F:\datasetpic
 
 ### 模式一：本地模型自动标注（推荐）
 
-使用本地部署的 Qwen3.5-4B 多模态模型，完全离线运行：
+个人推荐使用 Qwen3.5-27B 和 Qwen3.5-35B-A3B。以我的 Qwen3.5-4B 为例，使用本地部署的 Qwen3.5-4B 多模态模型，完全离线运行：
 
 ```bash
 python annotate.py --local-model F:/qwen3_5
