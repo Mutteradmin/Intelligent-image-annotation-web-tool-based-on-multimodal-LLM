@@ -186,11 +186,13 @@ curl http://localhost:5000/api/export?format=csv -o annotations.csv
       "姿势": ["站立"],
       "背景": ["白色背景"],
       "画面风格": ["动漫"],
-      "人物数量": "单人"
+      "人物数量": "单人",
+      ...
     },
     "custom_tags": [],
     "auto_labeled": true,
     "verified": false
+    ...
   }
 }
 ```
@@ -200,7 +202,7 @@ curl http://localhost:5000/api/export?format=csv -o annotations.csv
 | 模式 | 最低要求 |
 |------|----------|
 | 仅手动标注 | 任意电脑，浏览器即可 |
-| 本地模型 (Qwen3.5-4B) | NVIDIA GPU >= 12GB 显存（推荐 RTX 3070+） |
+| 本地模型 (推荐最低 Qwen3.5-4B，不然多模态标注能力太弱了) | NVIDIA GPU >= 12GB 显存（推荐 RTX 3070+） |
 | 远程 API | 需要网络连接和 API Key |
 
 ## 故障排除
