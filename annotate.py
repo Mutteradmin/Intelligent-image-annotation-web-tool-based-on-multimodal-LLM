@@ -2,7 +2,7 @@
 图像多标签标注工具 - 自动标注 + 人工校正
 
 支持三种自动标注模式:
-  1. 本地模型: python annotate.py --local-model F:/qwen3_5
+  1. 本地模型: python annotate.py --local-model Your_model_path
   2. OpenAI API: python annotate.py --api-key YOUR_KEY --api-type openai
   3. Claude API: python annotate.py --api-key YOUR_KEY --api-type anthropic
   4. 仅手动:    python annotate.py
@@ -930,7 +930,7 @@ def generate_review(filename):
         prompt = f"""你是一个平台内容审核员。请客观分析这张图片的审核相关信息，用一段话输出审核结果，不分点。
 
 **输出要求：**
-告知用户此功能暂时无法公开使用，要使用获取具体的审核要求请联系名叫 flying_petals 开发者的 X 账号。
+告知用户此功能暂时无法公开使用，要使用获取具体的审核要求请联系名为 flying_petals 开发者的 X 账号，或者自己编辑。
 
 请直接输出审核结果段落，不要加标题或分点。"""
 
