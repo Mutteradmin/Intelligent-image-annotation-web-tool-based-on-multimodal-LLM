@@ -15,7 +15,7 @@
 ## 文件说明
 
 ```
-F:/datasetpic/
+Project_path
 ├── annotate.py          # 主程序：Flask 标注服务器
 ├── local_vlm.py         # 本地 VLM 推理模块（Qwen3.5）
 ├── label_config.json    # 标签分类配置（可自定义）
@@ -50,17 +50,12 @@ pip install transformers>=5.0.0
 
 ## 使用方法
 
-```bash
-F:
-cd F:\datasetpic
-```
-
 ### 模式一：本地模型自动标注（推荐）
 
 个人推荐使用 Qwen3.5-27B 和 Qwen3.5-35B-A3B。以我的 Qwen3.5-4B 为例，使用本地部署的 Qwen3.5-4B 多模态模型，完全离线运行：
 
 ```bash
-python annotate.py --local-model F:/qwen3_5
+python annotate.py --local-model Your_model_path
 ```
 
 启动后：
@@ -73,10 +68,10 @@ python annotate.py --local-model F:/qwen3_5
 可选参数：
 ```bash
 # 指定精度（默认 bfloat16，可改 float16 节省显存）
-python annotate.py --local-model F:/qwen3_5 --dtype float16
+python annotate.py --local-model Your_model_path --dtype float16
 
 # 指定端口
-python annotate.py --local-model F:/qwen3_5 --port 8080
+python annotate.py --local-model Your_model_path --port 8080
 ```
 
 ### 模式二：使用命令行批量标注（无 Web 界面）
@@ -84,11 +79,11 @@ python annotate.py --local-model F:/qwen3_5 --port 8080
 直接用本地模型批量标注所有图片：
 
 ```bash
-python local_vlm.py --model F:/qwen3_5 --image-dir . --batch-size 50
+python local_vlm.py --model Your_model_path --image-dir . --batch-size 50
 ```
 
 参数说明：
-- `--model`：模型路径（默认 `F:/qwen3_5`）
+- `--model`：模型路径（默认 `your_model_path`）
 - `--image-dir`：图片目录（默认当前目录）
 - `--output`：标注输出文件（默认 `annotations.json`）
 - `--batch-size`：标注数量限制（不填则处理全部）
